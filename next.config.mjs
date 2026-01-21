@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // ✅ Correct for .mjs
 const nextConfig = {
   reactStrictMode: true,
@@ -7,3 +8,13 @@ const nextConfig = {
 }
 
 export default nextConfig
+=======
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    experimental:{
+          
+    },
+};
+
+export default nextConfig;
+>>>>>>> 2759ad140b90453d3eb3f0d8acc9336936e51c59
