@@ -1,0 +1,356 @@
+# Smartinovate — Next.js 14 Starter
+
+This single-file starter contains a ready-to-use Next.js App Router project scaffold (TailwindCSS) and the main files you need to reproduce the homepage you pasted. Copy the files into a new Next.js 14 app (or use `create-next-app`) and adjust assets, domain, and analytics keys.
+
+---
+
+## Project structure (what this starter includes)
+
+```
+smartinovate/
+├─ package.json
+├─ next.config.js
+├─ postcss.config.js
+├─ tailwind.config.js
+├─ app/
+│  ├─ layout.tsx
+│  ├─ page.tsx
+│  ├─ globals.css
+│  └─ components/
+│     ├─ Header.tsx
+│     ├─ Footer.tsx
+│     ├─ Hero.tsx
+│     ├─ Services.tsx
+│     └─ ProjectsCarousel.tsx
+├─ public/
+│  ├─ icons/* (logo.svg, logo2.svg, whatsapp-icon.svg)
+│  ├─ images/* (smartinovate-hero.svg, projects/*.svg)
+│  └─ favicon.ico
+└─ README.md
+```
+
+---
+
+## 1) package.json
+
+```json
+{
+  "name": "smartinovate",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.4.8",
+    "typescript": "^5.6.2"
+  }
+}
+```
+
+## 2) next.config.js
+
+```js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  experimental: { appDir: true },
+  images: {
+    domains: ["www.smartinovate.com"],
+  },
+}
+module.exports = nextConfig
+```
+
+## 3) tailwind.config.js
+
+```js
+module.exports = {
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        primary: '#06b6d4'
+      }
+    }
+  },
+  plugins: []
+}
+```
+
+## 4) postcss.config.js
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
+
+## 5) app/globals.css
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #__next { height: 100%; }
+body { font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+```
+
+## 6) app/layout.tsx
+
+```tsx
+import './globals.css'
+import Header from './components/Header'
+import Footer from './components/Footer'
+
+export const metadata = {
+  title: 'Smartinovate | Empowering Innovation',
+  description: 'Smartinovate helps businesses in Sri Lanka and beyond with smart IoT systems, industrial automation, and custom software development.'
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body>
+        <Header />
+        <main className="flex-1 max-w-6xl mx-auto p-4 w-full">{children}</main>
+        <Footer />
+      </body>
+    </html>
+  )
+}
+```
+
+## 7) app/page.tsx (homepage)
+
+```tsx
+import Hero from './components/Hero'
+import Services from './components/Services'
+import ProjectsCarousel from './components/ProjectsCarousel'
+
+export default function Home() {
+  return (
+    <main className="w-full bg-gradient-to-br from-white to-blue-50 px-4 py-20">
+      <section className="space-y-24">
+        <Hero />
+        <Services />
+        <ProjectsCarousel />
+
+        <section className="max-w-4xl mx-auto mt-12 text-gray-800 leading-relaxed space-y-6 text-lg">
+          <h2 className="text-3xl font-bold mb-4">Welcome to Smartinovate – Empowering Innovation</h2>
+          <p>
+            At <strong>Smartinovate</strong>, we specialize in building intelligent, scalable, and efficient solutions to help you thrive in a connected world. As a leading technology partner in <strong>Sri Lanka</strong>, we deliver innovative services including <a href="/services/iot-home-automation" className="text-blue-600 underline">IoT &amp; Smart Home Automation</a>, <a href="/services/industrial-automation" className="text-blue-600 underline">Industrial Automation</a>, and <a href="/services/mobile-web-apps" className="text-blue-600 underline">Mobile &amp; Web App Development</a>.
+          </p>
+          <p>
+            Whether you’re transforming your home with automation systems, developing a powerful mobile application, or integrating environmental and <strong>power monitoring</strong> systems into your industry, our expert team is here to support your goals with innovative technology and seamless integration.
+          </p>
+          <p>Our customized solutions are built using modern technologies like <strong>Arduino</strong>, <strong>Raspberry Pi</strong>, and cloud platforms. We ensure our systems are energy-efficient, secure, and tailored to your specific business or personal needs.</p>
+
+          <p>With a strong focus on quality, performance, and reliability, Smartinovate is trusted by businesses across Sri Lanka and globally. Our team of developers, engineers, and consultants are committed to turning your ideas into innovative, functional, and secure solutions.</p>
+
+          <p><a href="/contact" className="text-blue-600 underline">Contact us</a> today to start your journey with Smartinovate – where <strong>innovation meets intelligence</strong>.</p>
+        </section>
+      </section>
+    </main>
+  )
+}
+```
+
+## 8) app/components/Header.tsx
+
+```tsx
+export default function Header() {
+  return (
+    <header className="w-full shadow bg-white sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a className="flex items-center space-x-2" href="/">
+          <div className="relative w-10 h-10 md:hidden">
+            <img alt="Smartinovate Mobile Logo" src="/icons/logo.svg" className="object-contain w-full h-full" />
+          </div>
+          <div className="relative hidden md:block w-[140px] h-[40px]">
+            <img alt="Smartinovate Logo" src="/icons/logo2.svg" className="object-contain w-full h-full" />
+          </div>
+        </a>
+        <nav className="hidden md:flex space-x-6 text-sm font-medium text-gray-700">
+          <a className="hover:text-primary transition" href="/">Home</a>
+          <a className="hover:text-primary transition" href="/about">About</a>
+          <a className="hover:text-primary transition" href="/services">Services</a>
+          <a className="hover:text-primary transition" href="/projects">Projects</a>
+          <a className="hover:text-primary transition" href="/contact">Contact</a>
+        </nav>
+        <a href="https://wa.me/94704685300" className="ml-4 hidden md:inline-block bg-primary px-4 py-2 rounded text-black">Chat</a>
+      </div>
+    </header>
+  )
+}
+```
+
+## 9) app/components/Hero.tsx
+
+```tsx
+export default function Hero() {
+  return (
+    <section className="max-w-7xl mx-auto px-4 py-16 flex flex-col-reverse md:flex-row items-center justify-between gap-10">
+      <div className="max-w-xl text-center md:text-left">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">Empowering <span className="text-primary">Innovation</span> with Smart Solutions</h1>
+        <p className="mt-6 text-lg text-gray-600">Transform your business with intelligent IoT systems, industrial automation, and expert tech consultancy.</p>
+        <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+          <a className="px-6 py-3 bg-primary text-black rounded-lg shadow hover:bg-blue-700 transition" href="/services">Explore Services</a>
+          <a className="px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition" href="/contact">Contact Us</a>
+        </div>
+      </div>
+      <div className="w-full md:w-[500px]">
+        <div className="transition-transform duration-700 ease-in-out hover:scale-105">
+          <img alt="Smartinovate IoT and automation technology illustration" width={600} height={400} src="/images/smartinovate-hero.svg" className="mx-auto rounded-xl" />
+        </div>
+      </div>
+    </section>
+  )
+}
+```
+
+## 10) app/components/Services.tsx
+
+```tsx
+const services = [
+  { title: 'Customized Software Development', desc: 'Tailor-made software solutions that align with your business goals and workflow.', icon: '/icons/development.svg' },
+  { title: 'Web, Mobile & Desktop Apps', desc: 'Cross-platform applications that are functional, fast, and user-friendly.', icon: '/icons/app.svg' },
+  { title: 'Industrial Automation Systems', desc: 'Smart automation systems to increase production efficiency and reliability.', icon: '/icons/automation.svg' },
+  { title: 'Environment Monitoring Systems', desc: 'Solutions to monitor, log, and respond to environmental parameters in real time.', icon: '/icons/environment.svg' },
+  { title: 'IoT Project Development', desc: 'Connected solutions using Internet of Things (IoT) technologies.', icon: '/icons/iot.svg' },
+  { title: 'Home Automation', desc: 'Modern smart home solutions for convenience, safety, and energy efficiency.', icon: '/icons/home.svg' }
+]
+
+export default function Services() {
+  return (
+    <section className="mt-24 max-w-7xl mx-auto px-4" aria-labelledby="services-heading">
+      <h2 id="services-heading" className="text-3xl font-bold text-gray-900 text-center mb-6">Our Services</h2>
+      <p className="text-gray-600 text-center mb-12">Tailored solutions to meet your unique business needs.</p>
+      <div className="space-y-16">{
+        services.map(s => (
+          <article key={s.title} className="flex flex-col md:flex-row items-center justify-between gap-10">
+            <div className="w-full md:w-1/2 text-center">
+              <img src={s.icon} alt={`${s.title} icon`} width={500} height={400} className="mx-auto rounded-2xl shadow-lg" />
+            </div>
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">{s.title}</h3>
+              <p className="text-gray-600 text-md">{s.desc}</p>
+            </div>
+          </article>
+        ))
+      }</div>
+    </section>
+  )
+}
+```
+
+## 11) app/components/ProjectsCarousel.tsx
+
+```tsx
+export default function ProjectsCarousel() {
+  const projects = [
+    { title: 'Clean Room Monitoring System', img: '/projects/cleanroom.svg', desc: 'Monitors air quality, temperature, and humidity in sterile environments.' },
+    { title: 'Smart Greenhouse Monitoring System', img: '/projects/greenhouse.svg', desc: 'Automated control of temperature, humidity, and irrigation for optimal crop growth.' },
+    { title: 'Power Generator Remote Monitoring System', img: '/projects/Genarator.svg', desc: 'Remote monitoring of fuel, battery, and operational status of power generators.' }
+  ]
+
+  return (
+    <section className="mt-24 max-w-7xl mx-auto text-center px-4" aria-label="Completed projects carousel">
+      <h2 className="text-3xl font-bold text-gray-900 mb-6">Completed Projects</h2>
+      <p className="text-gray-600 mb-10 text-base">Real-world solutions we’ve built with innovation and excellence.</p>
+      <div className="grid md:grid-cols-3 gap-6">
+        {projects.map(p => (
+          <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col mx-2 hover:shadow-lg hover:scale-[1.02] transition-all duration-300" key={p.title}>
+            <img src={p.img} alt={p.title} className="w-full h-48 object-cover" />
+            <div className="p-4 text-left flex-1 flex flex-col justify-between">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800">{p.title}</h3>
+                <p className="text-sm text-gray-600 mt-1">{p.desc}</p>
+              </div>
+              <div className="mt-4">
+                <a className="inline-block text-sm text-blue-600 font-medium hover:underline" href="/projects">Read More →</a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+```
+
+## 12) app/components/Footer.tsx
+
+```tsx
+export default function Footer() {
+  return (
+    <footer className="w-full bg-gray-100 pt-8 pb-6 mt-12 border-t border-gray-200">
+      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-sm text-gray-600">
+        <div>
+          <h4 className="text-base font-semibold text-gray-800 mb-2">Contact Us</h4>
+          <p className="flex items-center gap-2">+94 704 685 300</p>
+          <p className="flex items-center gap-2 mt-1"><a href="mailto:smartinovate@smartinovate.com">smartinovate@smartinovate.com</a></p>
+        </div>
+        <div>
+          <h4 className="text-base font-semibold text-gray-800 mb-2">Our Services</h4>
+          <ul className="space-y-1">
+            <li><a className="hover:underline" href="/services/software-development">Software Development</a></li>
+            <li><a className="hover:underline" href="/services/industrial-automation">Industrial Automation</a></li>
+            <li><a className="hover:underline" href="/services/iot-home-automation">IoT & Home Automation</a></li>
+            <li><a className="hover:underline" href="/services/mobile-web-apps">Mobile & Web Apps</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-base font-semibold text-gray-800 mb-2">Connect With Us</h4>
+          <div className="flex space-x-4 mt-2">
+            <a target="_blank" rel="noopener noreferrer" href="https://facebook.com/your-page">Facebook</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/your-profile">LinkedIn</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/your-profile">GitHub</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://wa.me/94704685300">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div className="mt-8 text-center text-gray-500 text-xs">© 2025 Smartinovate. All rights reserved.</div>
+    </footer>
+  )
+}
+```
+
+## 13) Public assets
+
+Place logos and svgs under `/public/icons/` and images under `/public/images/` and `/public/projects/`. Optimize them (SVGO for SVGs, and convert large raster to WebP).
+
+## 14) Deployment
+
+1. Push to GitHub.
+2. Connect repository to Vercel (recommended for Next.js). Set environment variables if needed (analytics keys, API endpoints).
+3. Configure domain on Vercel or via Cloudflare (point A / CNAME to Vercel). Enable HTTPS.
+
+## 15) SEO & Analytics quick setup
+
+- Add a `script` for Google Analytics via `next/script` with `strategy="afterInteractive"` and use your GA id.
+- Add `app/sitemap.xml` generation (or use `next-sitemap` package) and upload to Google Search Console.
+- Add JSON-LD (Organization) into `app/layout.tsx` with `next/script` strategy afterInteractive.
+
+---
+
+If you want, I can:
+- translate the content to Sinhala and add `/si` localized route; or
+- create additional pages (`/services`, `/projects`, `/contact`) with forms and serverless endpoints; or
+- turn this into a GitHub repo patch (diff) you can apply.
+
+Tell me which path you prefer and I will add the next set of files (I already prepared the full starter in this canvas).
