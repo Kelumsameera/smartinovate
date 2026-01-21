@@ -1,11 +1,14 @@
+/** @type {import('next-seo').DefaultSeoProps} */
 const nextSeoConfig = {
   title: "Smart Innovate - Smart Solutions in Web, Software & IoT",
-  description: "Smart Innovate provides web development, IoT solutions, and business automation in Sri Lanka. Build modern, scalable, and smart systems with us.",
+  description:
+    "Smart Innovate provides web development, IoT solutions, and business automation in Sri Lanka.",
   openGraph: {
     type: "website",
     url: "https://www.smartinovate.com",
     title: "Smart Innovate - Smart Solutions",
-    description: "Smart Innovate provides web development, IoT solutions, and business automation.",
+    description:
+      "Smart Innovate provides web development, IoT solutions, and business automation.",
     images: [
       {
         url: "/og-image.png",
@@ -22,4 +25,4 @@ const nextSeoConfig = {
   },
 };
 
-export default nextSeoConfig;
+module.exports = nextSeoConfig;
