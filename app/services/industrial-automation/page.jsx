@@ -1,39 +1,124 @@
 import ServiceCTA from "@/app/components/ServiceCTA";
+import {
+  FaIndustry,
+  FaCogs,
+  FaRobot,
+  FaChartLine,
+  FaCheckCircle,
+  FaShieldAlt,
+} from "react-icons/fa";
 
 export const metadata = {
   title: "Industrial Automation | SmartInnovate",
   description:
-    "Advanced industrial automation solutions to improve efficiency, reduce costs, and enhance productivity.",
+    "Advanced industrial automation solutions to improve efficiency, reduce costs, and enhance productivity through smart control systems.",
 };
 
 export default function IndustrialAutomationPage() {
   return (
-    <section className="max-w-5xl mx-auto px-4 py-24">
-      <h1 className="text-4xl font-bold mb-6">
-        Industrial Automation
-      </h1>
+    <>
+      {/* HERO */}
+      <section className="pt-32 pb-20 bg-linear-to-br from-blue-50 to-white">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            Industrial <span className="text-blue-600">Automation</span>
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Smart automation solutions that modernize industrial operations,
+            improve efficiency, and ensure reliable, scalable production systems.
+          </p>
+        </div>
+      </section>
 
-      <p className="text-lg text-gray-600 mb-10">
-        Streamline your manufacturing and industrial processes with cutting-edge
-        automation solutions. We help businesses increase efficiency, reduce
-        operational costs, and improve quality through smart automation systems.
-      </p>
+      {/* OVERVIEW */}
+      <section className="max-w-6xl mx-auto px-4 py-20">
+        <h2 className="text-3xl font-bold mb-6">
+          Automate. Optimize. Scale.
+        </h2>
+        <p className="text-lg text-gray-600 max-w-3xl">
+          We design and implement intelligent industrial automation systems that
+          help organizations streamline operations, reduce downtime, and gain
+          real-time visibility into production processes.
+        </p>
+      </section>
 
-      <h2 className="text-2xl font-semibold mb-4">Our Automation Services</h2>
-      <ul className="list-disc pl-6 space-y-3 mb-10">
-        <li>PLC Programming</li>
-        <li>SCADA Systems</li>
-        <li>Process Automation</li>
-        <li>Robotics Integration</li>
-        <li>Industrial IoT Integration</li>
-      </ul>
+      {/* SERVICES */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Our Automation Services
+          </h2>
 
-      <h2 className="text-2xl font-semibold mb-4">Industries We Serve</h2>
-      <p className="mb-16 text-gray-600">
-        Manufacturing, Energy, Utilities, Logistics, and Industrial Operations.
-      </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              "PLC Programming & Control Systems",
+              "SCADA Design & Implementation",
+              "Process Automation Solutions",
+              "Robotics & Motion Control",
+              "Industrial IoT Integration",
+              "Predictive Maintenance Systems",
+            ].map((service, i) => (
+              <div
+                key={i}
+                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition"
+              >
+                <FaCheckCircle className="text-blue-600 mb-4 text-xl" />
+                <p className="text-gray-700">{service}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <ServiceCTA />
-    </section>
+      {/* TECHNOLOGIES */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6">
+            Technologies & Capabilities
+          </h2>
+          <p className="text-gray-600 mb-10">
+            We work with industry proven platforms and modern automation tools.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-10 text-blue-600 text-4xl">
+            <FaIndustry title="Industrial Systems" />
+            <FaCogs title="Control & Automation" />
+            <FaRobot title="Robotics Integration" />
+            <FaChartLine title="Data & Analytics" />
+            <FaShieldAlt title="Safety & Reliability" />
+          </div>
+        </div>
+      </section>
+
+      {/* INDUSTRIES */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Industries We Serve
+          </h2>
+
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            {[
+              "Manufacturing",
+              "Energy & Utilities",
+              "Logistics & Warehousing",
+              "Industrial Operations",
+            ].map((industry, i) => (
+              <div
+                key={i}
+                className="bg-white p-6 rounded-xl shadow-sm"
+              >
+                <p className="font-medium text-gray-700">{industry}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="max-w-6xl mx-auto px-4 pb-24">
+        <ServiceCTA />
+      </section>
+    </>
   );
 }

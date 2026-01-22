@@ -23,31 +23,53 @@ export default function Navbar() {
           : "bg-white/70 backdrop-blur-md"
       }`}
     >
-      {/* Navbar */}
+      {/* Navbar container */}
       <div
         className={`max-w-7xl mx-auto px-4 flex items-center justify-between transition-all duration-300 ${
           scrolled ? "h-14 md:h-16" : "h-16 md:h-20"
         }`}
       >
-        {/* Logo */}
-        <Link href="/" className="h-full flex mt-1 items-center">
+        {/* Logo + Tagline (stacked) */}
+        {/* Logo + Tagline (stacked) */}
+        <Link href="/" className="flex flex-col items-start">
           <Image
-            src="https://woinupcbvkriufpyhwtm.supabase.co/storage/v1/object/public/images/hederText2.png"
-            alt="Smartinovate Logo"
+            src="https://woinupcbvkriufpyhwtm.supabase.co/storage/v1/object/public/images/heder1.png"
+            alt="SmartInnovate Logo"
             width={300}
             height={100}
-           
-            className={`w-auto object-contain transition-all duration-300 '}
-            style={{ height: scrolled ? '40px' : '60px' }}`}
+            unoptimized
+            className="w-auto object-contain transition-all duration-300"
+            style={{ height: scrolled ? "36px" : "60px" }}
+            priority
           />
+
+          {/* Tagline */}
+          <span
+            className={` absolute ml-2 top-22 md:top-14
+              text-[12px] font-bold text-gray-600
+              tracking-wide leading-tight
+              transition-all duration-300
+              ${scrolled ? "opacity-0 h-0" : "opacity-100 h-auto"}
+            `}
+          >
+            Intelligent Innovation Solutions
+          </span>
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
-          <Link href="/" className="hover:text-blue-600 transition">Home</Link>
-          <Link href="/about" className="hover:text-blue-600 transition">About</Link>
-          <Link href="/services" className="hover:text-blue-600 transition">Services</Link>
-          <Link href="/contact" className="hover:text-blue-600 transition">Contact</Link>
+          <Link href="/" className="hover:text-blue-600 transition">
+            Home
+          </Link>
+          <Link href="/about" className="hover:text-blue-600 transition">
+            About
+          </Link>
+          <Link href="/services" className="hover:text-blue-600 transition">
+            Services
+          </Link>
+          <Link href="/contact" className="hover:text-blue-600 transition">
+            Contact
+          </Link>
         </nav>
 
         {/* CTA */}
@@ -62,7 +84,7 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Menu Toggle */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden text-2xl text-gray-800"
@@ -76,13 +98,21 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden bg-white border-t">
           <nav className="flex flex-col items-center py-4 space-y-3 text-gray-700 font-medium">
-            <Link href="/" onClick={() => setOpen(false)}>Home</Link>
-            <Link href="/about" onClick={() => setOpen(false)}>About</Link>
-            <Link href="/services" onClick={() => setOpen(false)}>Services</Link>
-            <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
+            <Link href="/" onClick={() => setOpen(false)}>
+              Home
+            </Link>
+            <Link href="/about" onClick={() => setOpen(false)}>
+              About
+            </Link>
+            <Link href="/services" onClick={() => setOpen(false)}>
+              Services
+            </Link>
+            <Link href="/contact" onClick={() => setOpen(false)}>
+              Contact
+            </Link>
 
             <a
-              href="https://wa.me/94704685300"
+              href="https://wa.me/94767785300"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg"

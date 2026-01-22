@@ -139,6 +139,19 @@ export default function ServicesPage() {
         "Cloud Security & Compliance"
       ],
       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop"
+    },
+    {
+      id: 7,
+      icon: <FaBolt className="w-16 h-16 text-blue-600" />,
+      title: "IT Consulting",
+      description: "Empower your business with expert IT consulting. Our services guide you towards a future of innovation and efficiency, ensuring your technology choices align with your goals.",
+      features: [
+        "Technology Strategy & Planning",
+        "System Audits & Assessments",
+        "Digital Transformation Roadmaps",
+        "Business Continuity Planning"  
+      ],
+      image: "https://plus.unsplash.com/premium_photo-1661418164801-4eb1fd33d5d4?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ];
 

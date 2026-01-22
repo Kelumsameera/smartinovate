@@ -1,4 +1,12 @@
 import ServiceCTA from "@/app/components/ServiceCTA";
+import {
+  FaCode,
+  FaLayerGroup,
+  FaServer,
+  FaLock,
+  FaCheckCircle,
+  FaChartLine,
+} from "react-icons/fa";
 
 export const metadata = {
   title: "Custom Software Development | SmartInnovate",
@@ -8,34 +16,113 @@ export const metadata = {
 
 export default function CustomSoftwarePage() {
   return (
-    <section className="max-w-5xl mx-auto px-4 py-24">
-      <h1 className="text-4xl font-bold mb-6">
-        Custom Software Development
-      </h1>
+    <>
+      {/* HERO */}
+      <section className="pt-32 pb-20 bg-linear-to-br from-blue-50 to-white">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            Custom <span className="text-blue-600">Software Development</span>
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Bespoke software engineered to solve real business problems, improve
+            efficiency, and scale seamlessly as your organization grows.
+          </p>
+        </div>
+      </section>
 
-      <p className="text-lg text-gray-600 mb-10">
-        Transform your business processes with bespoke software solutions
-        designed specifically for your organization. We build scalable,
-        efficient, and user-friendly applications that drive growth and
-        innovation.
-      </p>
+      {/* OVERVIEW */}
+      <section className="max-w-6xl mx-auto px-4 py-20">
+        <h2 className="text-3xl font-bold mb-6">
+          Software Built Around Your Business
+        </h2>
+        <p className="text-lg text-gray-600 max-w-3xl">
+          We design and develop custom software solutions tailored precisely to
+          your workflows, industry requirements, and long term goals  not
+          off the shelf compromises.
+        </p>
+      </section>
 
-      <h2 className="text-2xl font-semibold mb-4">What We Offer</h2>
-      <ul className="list-disc pl-6 space-y-3 mb-10">
-        <li>Enterprise Application Development</li>
-        <li>Legacy System Modernization</li>
-        <li>API Integration & Development</li>
-        <li>Microservices Architecture</li>
-        <li>Secure & Scalable Backend Systems</li>
-      </ul>
+      {/* SERVICES */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            What We Offer
+          </h2>
 
-      <h2 className="text-2xl font-semibold mb-4">Why Choose Us</h2>
-      <p className="mb-16 text-gray-600">
-        Our team combines technical expertise with business understanding to
-        deliver software that aligns perfectly with your goals.
-      </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              "Enterprise Application Development",
+              "Legacy System Modernization",
+              "API Integration & Development",
+              "Microservices Architecture",
+              "Secure & Scalable Backend Systems",
+              "Cloud-Ready Software Solutions",
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition"
+              >
+                <FaCheckCircle className="text-blue-600 mb-4 text-xl" />
+                <p className="text-gray-700">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <ServiceCTA />
-    </section>
+      {/* TECHNOLOGIES */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6">
+            Architecture & Technologies
+          </h2>
+          <p className="text-gray-600 mb-10">
+            We use proven architectures and modern technologies to build
+            reliable, maintainable, and future-ready software.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-10 text-blue-600 text-4xl">
+            <FaCode title="Clean Code" />
+            <FaLayerGroup title="Modular Architecture" />
+            <FaServer title="Backend Systems" />
+            <FaLock title="Security & Compliance" />
+            <FaChartLine title="Scalability & Performance" />
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Our Development Process
+          </h2>
+
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            {[
+              "Discovery & Planning",
+              "System Design",
+              "Agile Development",
+              "Testing & Deployment",
+            ].map((step, i) => (
+              <div
+                key={i}
+                className="bg-white p-6 rounded-xl shadow-sm"
+              >
+                <div className="text-blue-600 text-2xl font-bold mb-2">
+                  {i + 1}
+                </div>
+                <p className="text-gray-700 font-medium">{step}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="max-w-6xl mx-auto px-4 pb-24">
+        <ServiceCTA />
+      </section>
+    </>
   );
 }

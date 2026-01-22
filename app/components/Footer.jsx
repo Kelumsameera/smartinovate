@@ -55,7 +55,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/consulting" className="hover:text-white transition">
+                  <Link href="/services/it-consulting" className="hover:text-white transition">
                     Consulting
                   </Link>
                 </li>
@@ -97,7 +97,7 @@ export default function Footer() {
                   <FaGithub />
                 </a>
                 <a
-                  href="https://wa.me/947676785300"
+                  href="https://wa.me/94767785300"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
@@ -119,7 +119,7 @@ export default function Footer() {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/947676785300"
+        href="https://wa.me/94767785300"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"

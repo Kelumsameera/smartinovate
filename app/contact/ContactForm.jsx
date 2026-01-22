@@ -14,7 +14,7 @@ export default function ContactForm() {
       const message = formData.get("message");
 
       const text = `Hello SmartInnovate,%0A%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-      window.open(`https://wa.me/94704685300?text=${text}`, "_blank");
+      window.open(`https://wa.me/94767785300?text=${text}`, "_blank");
 
       setSuccess(true);
     });

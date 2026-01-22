@@ -22,7 +22,7 @@ export default function ServiceCTA() {
           </Link>
 
           <a
-            href="https://wa.me/94704685300"
+            href="https://wa.me/94767785300"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition"
