@@ -29,10 +29,10 @@ export default function AboutPage() {
   ];
 
   const stats = [
-    { label: "Projects Delivered", value: "1000+" },
-    { label: "Happy Clients", value: "500+" },
+    { label: "Projects Delivered", value: "100+" },
+    { label: "Happy Clients", value: "50+" },
     { label: "Years of Experience", value: "6+" },
-    { label: "Team Members", value: "25+" },
+    { label: "Team Members", value: "5+" },
   ];
 
   const team = [
