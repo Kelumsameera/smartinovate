@@ -1,9 +1,19 @@
-// ✅ Correct for .mjs
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    domains: ['woinupcbvkriufpyhwtm.supabase.co'],
-  },
-}
 
-export default nextConfig
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'woinupcbvkriufpyhwtm.supabase.co',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
+  },
+};
+
+export default nextConfig;

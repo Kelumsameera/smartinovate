@@ -37,11 +37,14 @@ export default function Hero() {
           <div className="relative w-full h-80  overflow-hidden">
             <Image
               src="https://woinupcbvkriufpyhwtm.supabase.co/storage/v1/object/public/images/Hero_Image.svg.png"
-              alt="SmartInnovate Hero Illustration"
-              fill
-              className="object-cover"
+              alt="SmartInnovate digital solutions illustration"
+              width={800}
+              height={600}
               priority
+              fetchPriority="high"
+              className="w-full h-auto"
             />
+
           </div>
 
           
