@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { HiMenu, HiX } from "react-icons/hi";
 
 export default function Navbar() {
@@ -22,19 +23,31 @@ export default function Navbar() {
           : "bg-white/70 backdrop-blur-md"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-        
+      {/* Navbar */}
+      <div
+        className={`max-w-7xl mx-auto px-4 flex items-center justify-between transition-all duration-300 ${
+          scrolled ? "h-14 md:h-16" : "h-16 md:h-20"
+        }`}
+      >
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-gray-900">
-          <span className="text-blue-600">Smart</span>Innovate
+        <Link href="/" className="h-full flex mt-1 items-center">
+          <Image
+            src="https://woinupcbvkriufpyhwtm.supabase.co/storage/v1/object/public/images/hederText2.png"
+            alt="Smartinovate Logo"
+            width={300}
+            height={100}
+           
+            className={`w-auto object-contain transition-all duration-300 '}
+            style={{ height: scrolled ? '40px' : '60px' }}`}
+          />
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
-          <Link href="/" className="hover:text-blue-600">Home</Link>
-          <Link href="/about" className="hover:text-blue-600">About</Link>
-          <Link href="/services" className="hover:text-blue-600">Services</Link>
-          <Link href="/contact" className="hover:text-blue-600">Contact</Link>
+          <Link href="/" className="hover:text-blue-600 transition">Home</Link>
+          <Link href="/about" className="hover:text-blue-600 transition">About</Link>
+          <Link href="/services" className="hover:text-blue-600 transition">Services</Link>
+          <Link href="/contact" className="hover:text-blue-600 transition">Contact</Link>
         </nav>
 
         {/* CTA */}
@@ -49,7 +62,7 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile Toggle */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden text-2xl text-gray-800"

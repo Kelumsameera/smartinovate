@@ -1,95 +1,89 @@
 import {
-  Cpu,
-  Code,
-  Factory,
-  Home,
-  Cloud,
-} from "lucide-react";
+  FaCode,
+  FaGlobe,
+  FaMobileAlt,
+  FaCog,
+  FaRobot,
+  FaCloud
+} from "react-icons/fa";
 
 export const services = [
   {
-    id: "software",
-    title: "Customized Software Development",
-    icon: Code,
+    slug: "custom-software",
+    title: "Custom Software Development",
+    icon: FaCode,
     description:
-      "Tailor-made software solutions aligned with your business goals and workflows.",
-    useCases: [
-      "Business process automation",
-      "ERP & CRM systems",
-      "Internal management systems",
+      "Transform your business processes with bespoke software solutions tailored to your unique requirements.",
+    features: [
+      "Enterprise Application Development",
+      "Legacy System Modernization",
+      "API Integration & Development",
+      "Microservices Architecture"
     ],
-    pricing: {
-      starter: "LKR 150,000+",
-      pro: "LKR 300,000+",
-      enterprise: "Custom Quote",
-    },
   },
   {
-    id: "apps",
-    title: "Web, Mobile & Desktop Applications",
-    icon: Cloud,
+    slug: "web-development",
+    title: "Web Development",
+    icon: FaGlobe,
     description:
-      "Fast, secure, and scalable applications built for modern platforms.",
-    useCases: [
-      "Startup MVPs",
-      "E-commerce platforms",
-      "SaaS applications",
+      "Create stunning, responsive websites that captivate your audience and convert visitors into customers.",
+    features: [
+      "Responsive Web Design",
+      "E-commerce Solutions",
+      "Content Management Systems",
+      "Progressive Web Apps (PWA)"
     ],
-    pricing: {
-      starter: "LKR 200,000+",
-      pro: "LKR 450,000+",
-      enterprise: "Custom Quote",
-    },
   },
   {
-    id: "industrial",
-    title: "Industrial Automation Systems",
-    icon: Factory,
+    slug: "mobile-apps",
+    title: "Mobile App Development",
+    icon: FaMobileAlt,
     description:
-      "Automation systems designed to improve efficiency and accuracy.",
-    useCases: [
-      "Manufacturing plants",
-      "Production line monitoring",
-      "PLC & SCADA integration",
+      "Reach your customers wherever they are with powerful mobile applications.",
+    features: [
+      "Native iOS & Android Apps",
+      "Cross-Platform Development",
+      "App Store Optimization",
+      "Mobile UI/UX Design"
     ],
-    pricing: {
-      starter: "LKR 250,000+",
-      pro: "LKR 600,000+",
-      enterprise: "Custom Quote",
-    },
   },
   {
-    id: "iot",
-    title: "IoT & Smart Home Automation",
-    icon: Home,
+    slug: "industrial-automation",
+    title: "Industrial Automation",
+    icon: FaCog,
     description:
-      "Connected IoT systems for real-time control and monitoring.",
-    useCases: [
-      "Smart homes",
-      "Remote device monitoring",
-      "Energy optimization",
+      "Streamline manufacturing and industrial processes with cutting-edge automation.",
+    features: [
+      "PLC Programming",
+      "SCADA Systems",
+      "Process Automation",
+      "Robotics Integration"
     ],
-    pricing: {
-      starter: "LKR 120,000+",
-      pro: "LKR 350,000+",
-      enterprise: "Custom Quote",
-    },
   },
   {
-    id: "environment",
-    title: "Environment Monitoring Solutions",
-    icon: Cpu,
+    slug: "iot-home-automation",
+    title: "IoT & Home Automation",
+    icon: FaRobot,
     description:
-      "Advanced systems for tracking environmental conditions.",
-    useCases: [
-      "Agriculture monitoring",
-      "Cold room tracking",
-      "Air quality measurement",
+      "Connect your world with intelligent IoT solutions and smart home automation.",
+    features: [
+      "Smart Home Systems",
+      "IoT Device Integration",
+      "Sensor Networks",
+      "Remote Monitoring & Control"
     ],
-    pricing: {
-      starter: "LKR 100,000+",
-      pro: "LKR 280,000+",
-      enterprise: "Custom Quote",
-    },
+  },
+  {
+    slug: "cloud-solutions",
+    title: "Cloud Solutions",
+    icon: FaCloud,
+    description:
+      "Leverage cloud computing to scale your business effortlessly.",
+    features: [
+      "Cloud Migration",
+      "AWS, Azure & Google Cloud",
+      "DevOps & CI/CD",
+      "Cloud Security & Compliance"
+    ],
   },
 ];

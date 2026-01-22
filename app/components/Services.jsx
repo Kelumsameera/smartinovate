@@ -51,8 +51,10 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Link from "next/link";
 import { HiMenu, HiX } from 'react-icons/hi';
 import { FaCode, FaMobileAlt, FaGlobe, FaBolt, FaCog, FaRobot, FaDatabase, FaCloud, FaArrowRight, FaCheck } from 'react-icons/fa';
+import ServiceCTA from './ServiceCTA';
 
 export default function ServicesPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -218,9 +220,12 @@ export default function ServicesPage() {
                   ))}
                 </div>
 
-                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition flex items-center">
-                  Learn More <FaArrowRight className="ml-2" />
-                </button>
+                <Link
+                    href={`/services/${service.title .toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}
+                    className="inline-flex items-center bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition"
+                  >
+                    Learn More <FaArrowRight className="ml-2" />
+                  </Link>
               </div>
 
               {/* Image Side */}
@@ -250,24 +255,10 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-blue-600 to-blue-800">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-4xl font-bold mb-6">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-xl mb-8 text-blue-100">
-            Let's discuss how our services can help you achieve your goals. Get in touch with our team today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition font-semibold">
-              Get Started
-            </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition font-semibold">
-              View Portfolio
-            </button>
-          </div>
-        </div>
-      </section>
+      <div className="px-4 mb-6">
+        <ServiceCTA />
+      </div>
+      
 
       
     </div>

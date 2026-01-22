@@ -1,10 +1,10 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /* Global Font & Body */
 body {
   font-family: 'Inter', sans-serif;
-  background: #ffffff; /* Light theme background */
-  color: #1f2937;      /* Dark text for readability */
+  background: #ffffff;
+  color: #1f2937;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -15,13 +15,12 @@ body {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(16px);
   border-radius: 16px;
-  border: 1px solid rgba(88, 213, 141, 0.3); /* subtle green border */
+  border: 1px solid rgba(88, 213, 141, 0.3);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
   color: #1f2937;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Glass Hover Effect */
 .glass:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 40px rgba(88, 213, 141, 0.25);
@@ -35,16 +34,12 @@ body {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  color: #1f2937;
-  font-weight: 700;
-}
+
 
 /* Buttons - Primary */
 .btn-primary {
   background-color: #58d58d;
-  color: white;
+  color: #ffffff;
   padding: 0.75rem 1.5rem;
   border-radius: 12px;
   font-weight: 600;
@@ -56,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
 }
 
-/* Buttons - Secondary Glass */
+/* Buttons - Glass */
 .btn-glass {
   background: rgba(88, 213, 141, 0.1);
   color: #58d58d;
@@ -69,27 +64,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-glass:hover {
   background: #58d58d;
-  color: white;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
-/* Links */
-a {
-  text-decoration: none;
-  color: #1f2937; /* Dark text links for light background */
-  transition: color 0.3s ease;
-}
 
 a:hover {
   color: #45c77a;
 }
 
-/* Section Padding */
+/* Sections */
 section {
   padding: 4rem 1rem;
 }
 
-/* Responsive Glass Utility */
+/* Responsive Glass */
 @media (max-width: 768px) {
   .glass {
     padding: 1.5rem;

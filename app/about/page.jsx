@@ -1,45 +1,11 @@
-// export const metadata = {
-//   title: "About Us | Smartinovate",
-//   description:
-//     "Learn about Smartinovate – Sri Lanka's innovative technology partner for IoT, automation, and smart software solutions.",
-// };
+import Image from "next/image";
+import { FaLinkedin } from "react-icons/fa";
 
-// export default function AboutPage() {
-//   return (
-//     <section className="max-w-5xl mx-auto px-4 py-20 text-gray-800">
-//       <h1 className="text-4xl font-bold mb-8 text-center">About Smartinovate</h1>
-
-//       <p className="text-lg mb-6">
-//         <strong>Smartinovate</strong> is a Sri Lanka–based technology company
-//         focused on delivering smart, connected, and automated solutions that
-//         empower businesses and individuals. We specialize in
-//         <strong> IoT systems, industrial automation, and custom software development</strong>.
-//       </p>
-
-//       <p className="text-lg mb-6">
-//         Our mission is to transform everyday challenges into intelligent systems
-//         through the power of innovation. We collaborate with businesses to
-//         design and implement solutions that enhance efficiency, sustainability,
-//         and scalability.
-//       </p>
-
-//       <p className="text-lg mb-6">
-//         From concept to deployment, Smartinovate ensures that every product or
-//         service we deliver is built on the foundation of quality, security, and
-//         performance. Our vision is to become the leading provider of smart
-//         technology solutions in Sri Lanka and beyond.
-//       </p>
-
-//       <p className="text-lg mt-10 font-semibold text-center">
-//         “Empowering Innovation — where technology meets intelligence.”
-//       </p>
-//     </section>
-//   );
-// }
+/* SEO */
 export const metadata = {
   title: "About Us | SmartInnovate",
   description:
-    "SmartInnovate is a technology company delivering scalable software, web, and cloud solutions for modern businesses.",
+    "Learn about SmartInnovate – a technology company delivering scalable software, automation, IoT, and cloud solutions for modern businesses.",
 };
 
 export default function AboutPage() {
@@ -70,9 +36,22 @@ export default function AboutPage() {
   ];
 
   const team = [
-    { name: "Sameera Kelum", role: "Founder & Lead Developer" },
-    { name: "UI/UX Designer", role: "Design Lead" },
-    { name: "Backend Engineer", role: "System Architect" },
+    {
+      name: "Sameera Kelum",
+      role: "Founder & Lead Developer",
+      image:
+        "https://woinupcbvkriufpyhwtm.supabase.co/storage/v1/object/public/images/sameera.jpg",
+      linkedin: "https://www.linkedin.com/",
+      bio: "Founder of SmartInnovate with expertise in full-stack development, IoT systems, and scalable cloud architectures.",
+    },
+    {
+      name: "Chanaka Madushan",
+      role: "Automation Engineer",
+      image:
+        "https://woinupcbvkriufpyhwtm.supabase.co/storage/v1/object/public/images/madushan.jpg",
+      linkedin: "https://www.linkedin.com/",
+      bio: "Specialist in industrial automation, PLC programming, SCADA systems, and smart manufacturing solutions.",
+    },
   ];
 
   return (
@@ -96,12 +75,12 @@ export default function AboutPage() {
           <div>
             <h2 className="text-3xl font-bold mb-4">Who We Are</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              SmartInnovate is a professional software development company
-              specializing in web applications, mobile solutions, and cloud
-              technologies.
+              SmartInnovate is a professional technology company specializing in
+              software development, industrial automation, IoT systems, and
+              cloud-based solutions.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Our team combines technical expertise with strategic thinking to
+              Our team combines engineering expertise with strategic thinking to
               help organizations achieve digital transformation and long-term
               success.
             </p>
@@ -129,7 +108,7 @@ export default function AboutPage() {
             {values.map((v, i) => (
               <div
                 key={i}
-                className="bg-white p-6 rounded-lg shadow-sm"
+                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition"
               >
                 <h3 className="text-xl font-semibold mb-2">{v.title}</h3>
                 <p className="text-gray-600 text-sm">{v.desc}</p>
@@ -154,19 +133,58 @@ export default function AboutPage() {
       </section>
 
       {/* TEAM */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-12">Leadership Team</h2>
+          <h2 className="text-4xl font-bold mb-4">Leadership Team</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto mb-12">
+            Meet the people driving innovation and delivering smart solutions at
+            SmartInnovate.
+          </p>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 justify-center">
             {team.map((member, i) => (
               <div
                 key={i}
-                className="bg-white border rounded-lg p-6 hover:shadow-lg transition"
+                className="group bg-white border rounded-xl p-8 hover:shadow-xl transition-all hover:-translate-y-2"
               >
-                <div className="w-20 h-20 mx-auto rounded-full bg-blue-100 mb-4" />
+                <div className="relative w-32 h-32 mx-auto mb-4">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={128}
+                      height={128}
+                      unoptimized
+                      className="w-full h-full rounded-full object-cover"
+                      priority={i === 0}
+                    />
+
+
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute -bottom-2 -right-2 bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition"
+                    >
+                      <FaLinkedin className="w-4 h-4" />
+                    </a>
+                  )}
+                </div>
+
                 <h3 className="text-xl font-semibold">{member.name}</h3>
-                <p className="text-gray-600 text-sm">{member.role}</p>
+                <p className="text-blue-600 text-sm font-medium mb-3">
+                  {member.role}
+                </p>
+
+                <p className="text-gray-600 text-sm opacity-0 group-hover:opacity-100 transition">
+                  {member.bio}
+                </p>
+
+                {member.role.includes("Founder") && (
+                  <span className="inline-block mt-4 px-4 py-1 text-xs font-semibold bg-blue-100 text-blue-600 rounded-full">
+                    Founder
+                  </span>
+                )}
               </div>
             ))}
           </div>
