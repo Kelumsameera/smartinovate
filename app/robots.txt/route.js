@@ -1,14 +1,12 @@
-import { NextResponse } from "next/server";
-
 export async function GET() {
-  const robots = `
+  const robotsTxt = `
 User-agent: *
 Allow: /
 
-Sitemap: https://smartinnovate.com/sitemap.xml
+Sitemap: https://smartinovate.com/sitemap.xml
 `;
 
-  return new NextResponse(robots.trim(), {
+  return new Response(robotsTxt.trim(), {
     headers: {
       "Content-Type": "text/plain",
     },
