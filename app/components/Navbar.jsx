@@ -45,7 +45,7 @@ export default function Navbar() {
 
           {/* Tagline */}
           <span
-            className={` absolute ml-2 top-22 md:top-14
+            className={` absolute ml-2 top-10 lg:top-12
               text-[12px] font-bold text-gray-600
               tracking-wide leading-tight
               transition-all duration-300
