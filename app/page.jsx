@@ -11,13 +11,15 @@ import Testimonials from "./components/Testimonials";
 export default function Page() {
   return (
     <>
-      {/* <Navbar /> */}
+      <div className="py-10">
+        {/* <Navbar /> */}
       <Hero />
       <HomeAbout />
       <ServicesPage />
       <Testimonials />
       <ClientLogos />
       <CTA />
+      </div>
 
       
     </>
