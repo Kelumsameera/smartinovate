@@ -9,11 +9,14 @@ export const metadata = {
 export default function ServicesHomePage() {
   return (
     <>
-     
+     <div className="mt-10">
+      <ServicesPage />
+
+     </div>
 
       {/* Animated Services */}
       
-      <ServicesPage />
+      
       
     </>
   );
