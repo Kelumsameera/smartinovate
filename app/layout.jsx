@@ -45,8 +45,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <Navbar />
         <GTM />
         {children}
+        <Footer />
       </body>
     </html>
   );
