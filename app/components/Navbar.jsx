@@ -61,6 +61,9 @@ export default function Navbar() {
           <Link href="/" className="hover:text-blue-600 transition">
             Home
           </Link>
+          <Link href='/ecommerce' className="hover:text-blue-600 transition">
+            E-Commerce
+          </Link>
           <Link href="/about" className="hover:text-blue-600 transition">
             About
           </Link>
@@ -100,6 +103,9 @@ export default function Navbar() {
           <nav className="flex flex-col items-center py-4 space-y-3 text-gray-700 font-medium">
             <Link href="/" onClick={() => setOpen(false)}>
               Home
+            </Link>
+            <Link href='/ecommerce' onClick={() => setOpen(false)}>
+              E-Commerce
             </Link>
             <Link href="/about" onClick={() => setOpen(false)}>
               About

@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import GTM from "./components/GTM";
 
 export const metadata = {
   title: {
@@ -43,10 +44,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-linear-to-br from-blue-900 via-black to-gray-900 text-white">
-        <Navbar />
-        <main className="pt-20">{children}</main>
-        <Footer />
+      <body>
+        <GTM />
+        {children}
       </body>
     </html>
   );
