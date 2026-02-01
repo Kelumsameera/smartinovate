@@ -57,7 +57,7 @@ export default function AboutPage() {
   return (
     <>
       {/* HERO */}
-      <section className="pt-28 pb-20 bg-linear-to-br from-blue-50 to-white">
+      <section className="mt-16 pb-20 bg-linear-to-br from-blue-50 to-white">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             About <span className="text-blue-600">SmartInnovate</span>
