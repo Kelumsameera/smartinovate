@@ -21,10 +21,10 @@ export default function Hero() {
           </p>
 
           <div className="flex gap-4">
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg flex items-center hover:bg-blue-700 transition">
+            <button className="bg-blue-600 text-white px-8 py-3 rounded-4xl flex items-center hover:bg-blue-700 transition">
               Get Started <FaArrowRight className="ml-2" />
             </button>
-            <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition">
+            <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-4xl hover:bg-blue-50 transition">
               View Our Work
             </button>
           </div>

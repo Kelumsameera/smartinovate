@@ -81,7 +81,7 @@ export default function Navbar() {
             href="https://wa.me/94704685300"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
+            className="bg-blue-600 text-white px-4 py-2 rounded-3xl font-semibold hover:bg-blue-700 transition"
           >
             Chat Now
           </a>
@@ -121,7 +121,7 @@ export default function Navbar() {
               href="https://wa.me/94767785300"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg"
+              className="mt-2 bg-blue-600 text-white px-4 py-2 rounded-3xl font-semibold hover:bg-blue-700 transition"
             >
               Chat on WhatsApp
             </a>

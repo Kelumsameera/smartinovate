@@ -59,14 +59,14 @@ export default function HomeAbout() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/about"
-              className="bg-blue-600 text-white px-7 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+              className="bg-blue-600 text-white px-7 py-3 rounded-4xl font-semibold hover:bg-blue-700 transition"
             >
               Learn More About Us
             </Link>
 
             <Link
               href="/contact"
-              className="border border-blue-600 text-blue-600 px-7 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition"
+              className="border border-blue-600 text-blue-600 px-7 py-3 rounded-4xl font-semibold hover:bg-blue-600 hover:text-white transition"
             >
               Contact Us
             </Link>
