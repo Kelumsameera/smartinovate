@@ -29,6 +29,13 @@ const testimonials = [
       "An excellent technology partner. Clean code, clear communication, and strong delivery timelines. Highly recommended for software projects.",
     rating: 5,
   },
+  {
+    name:"Kalana Kavinda",
+    role:"CEO",
+    company:"Camx secure",
+    message:"SmartInnovate team delivered our camx.lk website with excellent design, performance and professionalism. The team was responsive and technically strong throughout the project. Highly recommended for web development and digital solutions",
+    rating:5,
+  },
 ];
 
 export default function Testimonials() {
