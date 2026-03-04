@@ -16,7 +16,7 @@ const logos = [
   { name: "Stripe", src: "https://woinupcbvkriufpyhwtm.supabase.co/storage/v1/object/public/images/Stripe%20wordmark%20-%20Blurple.svg" },
   { name: "GoDaddy", src: "https://woinupcbvkriufpyhwtm.supabase.co/storage/v1/object/public/images/GoDaddy_logo.svg.png" },
   { name: "LankaHosting", src: "https://woinupcbvkriufpyhwtm.supabase.co/storage/v1/object/public/images/lankahost-authorized-lk-domain-reseller-logo.png" },
-  { name: "PayHere", src: "https://www.payhere.lk/downloads/images/payhere_short_banner.png" },
+  { name: "PayHere", src: "https://woinupcbvkriufpyhwtm.supabase.co/storage/v1/object/public/images/payhere_short_banner.png" },
 ];
 
 export default function ClientLogos() {
