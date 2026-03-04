@@ -24,14 +24,14 @@ export default function Hero() {
           <div className="flex gap-4">
             <Link
               href="/get-started"
-              className="bg-blue-600 text-white px-8 py-3 rounded-4xl flex items-center hover:bg-blue-700 transition"
+              className="bg-blue-600 text-white px-8 py-3 text-center rounded-full flex items-center hover:bg-blue-700 transition"
             >
               Get Started <FaArrowRight className="ml-2" />
             </Link>
 
             <Link
               href="/services"
-              className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-4xl hover:bg-blue-50 transition"
+              className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full hover:bg-blue-50 transition"
             >
               View Our Services
             </Link>
